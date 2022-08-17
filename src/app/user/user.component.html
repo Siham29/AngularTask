@@ -1,0 +1,83 @@
+<!-- {{UserList | json}} -->
+<form #form="ngForm" (ngSubmit)="addUser(form)">
+    <div>
+      <label>Name</label>
+      <br>
+      <input type="text" [(ngModel)]="NewUser.name" required name="name">
+      <br>
+      <span *ngIf="form.form.controls['name']?.touched && ! form.form.controls['name']?.valid" style="font-size: 11px ;color: red;">Name required</span>
+    </div>
+  
+   <div>
+    <label>Age</label>
+    <br>
+    <input type="number"[(ngModel)]="NewUser.age" required name="age" >
+    <br>
+    <!-- <span *ngIf="form.form.controls['age']?.value<1 && ! form.form.controls['age']?.valid" style="font-size: 11px ;color: red;">Age required</span> -->
+   </div>
+  
+   
+  <div>
+    <label>Password</label>
+    <br>
+    <input type="password"[(ngModel)]="NewUser.password" required name="password">
+    <br>
+    <span *ngIf="form.form.controls['password'].touched && ! form.form.controls['password']?.valid" style="font-size: 11px ;color: red;">Password required</span>
+  </div>
+  
+  <div>
+    <label>Email</label>
+    <br>
+    <input type="email"[(ngModel)]="NewUser.email" email required name="email">
+    <br>
+    <span *ngIf="form.form.controls['email'].touched && ! form.form.controls['email']?.valid" style="font-size: 11px ;color: red;">Email required</span>
+  </div>
+  
+  
+  <div>
+    <label>User Name</label>
+    <br>
+    <input type="text"[(ngModel)]="NewUser.userName" required name="userName">
+    <br>
+    <span *ngIf="form.form.controls['userName'].touched && ! form.form.controls['userName']?.valid" style="font-size: 11px ;color: red;">User Name required</span>
+  </div>
+  
+  
+  <button type="submit">Add</button>
+  
+  </form>
+  
+  <table border="1">
+  <thead>
+  
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        age
+      </th>
+      <th>
+        email
+      </th>
+      <th>
+        User Name
+      </th>
+      <th>
+        Delete
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let User of UserList">
+  <td>{{User.name}}</td>
+  <td>{{User.age}}</td>
+  <td>{{User.email}}</td>
+  <td>{{User.userName}}</td>
+  <td><button (click)="DeleteUser(User)">Delete</button></td>
+  
+  </tr>
+  </tbody>
+  </table>
+  
+  
