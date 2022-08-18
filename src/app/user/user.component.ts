@@ -15,7 +15,8 @@ interface User {
 })
 export class UserComponent implements OnInit {
  @Output()user=new EventEmitter<User>();
- @Input() public NewUser:User={name:'',age:0,password:'',email:'',userName:''};
+ 
+  public NewUser:User={name:'',age:0,password:'',email:'',userName:''};
 
   constructor() { }
 
