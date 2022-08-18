@@ -1,1 +1,34 @@
-<app-user></app-user>
+<app-user (user)="addUser($event)"></app-user>
+ 
+<table border="1">
+  <thead>
+  
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        age
+      </th>
+      <th>
+        email
+      </th>
+      <th>
+        User Name
+      </th>
+      <th>
+        Delete
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let User of UserList">
+  <td>{{User.name}}</td>
+  <td>{{User.age}}</td>
+  <td>{{User.email}}</td>
+  <td>{{User.userName}}</td>
+  <td><button (click)="DeleteUser(User)">Delete</button></td>
+  
+  </tr>
+  </tbody>
+  </table>
