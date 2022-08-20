@@ -1,5 +1,5 @@
 <!-- {{UserList | json}} -->
-<form #form="ngForm" (ngSubmit)="addUser(form)">
+<form #form="ngForm" (ngSubmit)="addUser(form)" >
     <div>
       <label>Name</label>
       <br>
@@ -22,7 +22,7 @@
     <br>
     <input type="password"[(ngModel)]="NewUser.password" required name="password">
     <br>
-    <span *ngIf="form.form.controls['password'].touched && ! form.form.controls['password']?.valid" style="font-size: 11px ;color: red;">Password required</span>
+    <span *ngIf="form.form.controls['password']?.touched && ! form.form.controls['password']?.valid" style="font-size: 11px ;color: red;">Password required</span>
   </div>
   
   <div>
@@ -30,7 +30,7 @@
     <br>
     <input type="email"[(ngModel)]="NewUser.email" email required name="email">
     <br>
-    <span *ngIf="form.form.controls['email'].touched && ! form.form.controls['email']?.valid" style="font-size: 11px ;color: red;">Email required</span>
+    <span *ngIf="form.form.controls['email']?.touched && ! form.form.controls['email']?.valid" style="font-size: 11px ;color: red;">Email required</span>
   </div>
   
   
@@ -39,13 +39,14 @@
     <br>
     <input type="text"[(ngModel)]="NewUser.userName" required name="userName">
     <br>
-    <span *ngIf="form.form.controls['userName'].touched && ! form.form.controls['userName']?.valid" style="font-size: 11px ;color: red;">User Name required</span>
+    <span *ngIf="form.form.controls['userName']?.touched && ! form.form.controls['userName']?.valid" style="font-size: 11px ;color: red;">User Name required</span>
   </div>
   
   
   <button type="submit">Add</button>
   
   </form>
+ 
  
   
   

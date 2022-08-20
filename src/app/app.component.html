@@ -1,34 +1,18 @@
-<app-user (user)="addUser($event)"></app-user>
+<div class="bodyy">
+<header class="flex-header" id="h">
+  Header
+
  
-<table border="1">
-  <thead>
-  
-    <tr>
-      <th>
-        Name
-      </th>
-      <th>
-        age
-      </th>
-      <th>
-        email
-      </th>
-      <th>
-        User Name
-      </th>
-      <th>
-        Delete
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let User of UserList">
-  <td>{{User.name}}</td>
-  <td>{{User.age}}</td>
-  <td>{{User.email}}</td>
-  <td>{{User.userName}}</td>
-  <td><button (click)="DeleteUser(User)">Delete</button></td>
-  
-  </tr>
-  </tbody>
-  </table>
+</header>
+
+<div class="flex-main">
+  <div class="flex-LeftSec" id="l">
+    <a routerLink="/List"><button  > User table</button></a>
+    <a routerLink="/"><button  > Back</button></a>
+  </div>
+  <div class="flex-M"><router-outlet></router-outlet></div>
+</div>
+<footer class="flex-footer">Footer Section</footer>
+
+
+</div>
