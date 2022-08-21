@@ -1,3 +1,5 @@
+import { Router, Routes } from '@angular/router';
+import { ServicesService } from './../../services.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
  interface User {
@@ -14,12 +16,12 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
- @Output()user=new EventEmitter<User>();
-@Input()  updateUser:User={name:'',age:0,password:'',email:'',userName:''};
+
 
   public NewUser:User={name:'',age:0,password:'',email:'',userName:''};
+ 
 
-  constructor() { }
+  constructor(public servicesService:ServicesService ,public router:Router) { }
 
   ngOnInit(): void {
    
@@ -31,9 +33,10 @@ export class UserComponent implements OnInit {
           form.form.markAllAsTouched();
         }
         if(form.form.valid)
-          this.user.emit(form.form.value);
-        
-        
+       {this.servicesService.UserList.push(form.value);
+
+        this.router.navigate(['/main/List']);
+       } 
       }
 
       

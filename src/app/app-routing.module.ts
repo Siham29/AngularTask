@@ -1,11 +1,8 @@
-import { TableComponent } from './table/table.component';
-import { UserComponent } from './user/user.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: UserComponent },
-  { path: 'List', component: TableComponent }
+ { path: 'main',loadChildren:() => import('./main/main.module').then(c => c.MainModule)}
 ];
 
 @NgModule({
