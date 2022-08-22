@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { ServicesService } from './../../services.service';
+import { Component, OnInit, PipeTransform } from '@angular/core';
+import { CalcAgePipe } from 'src/app/calc-age.pipe';
+import { ServicesService } from 'src/app/services.service';
+
 interface User {
   name: string;
   age: number;
   password:string;
   email:string;
   userName:string;
+  DateOfBirth?:Date;
 
 }
 
@@ -21,7 +24,7 @@ export class TableComponent implements OnInit {
 
  
 
-  constructor(public servicesService:ServicesService) { }
+  constructor(public servicesService:ServicesService, public calcAgePipe:CalcAgePipe ) { }
 
   ngOnInit(): void {
   }

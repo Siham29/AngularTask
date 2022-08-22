@@ -1,12 +1,12 @@
- <table border="1">
+ <table border="3"  style="text-align: center;border-collapse: collapse">
   <thead>
   
-    <tr>
+    <tr style="border: 3px solid black;">
       <th>
         Name
       </th>
       <th>
-        age
+        Date of Birth
       </th>
       <th>
         email
@@ -15,16 +15,21 @@
         User Name
       </th>
       <th>
+       Age
+      </th>
+      <th>
         Delete
       </th>
+      
     </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let User of servicesService.UserList">
+  <tr *ngFor="let User of servicesService.UserList" style="border: 3px solid black;">
   <td>{{User.name}}</td>
-  <td>{{User.age}}</td>
+  <td>{{User.DateOfBirth | date}}</td>
   <td>{{User.email}}</td>
   <td>{{User.userName}}</td>
+  <td>{{User.DateOfBirth | calcAge}}</td>
   <td><button (click)="DeleteUser(User)" style="width: 200px;height: 50px;">Delete</button></td>
  
   

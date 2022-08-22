@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
   password:string;
   email:string;
   userName:string;
+  DateOfBirth?:Date;
 
 }
 @Component({
@@ -33,7 +34,7 @@ export class UserComponent implements OnInit {
           form.form.markAllAsTouched();
         }
         if(form.form.valid)
-       {this.servicesService.UserList.push(form.value);
+       {this.servicesService.UserList.push({...this.NewUser});
 
         this.router.navigate(['/main/List']);
        } 

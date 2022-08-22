@@ -7,14 +7,14 @@
       <br>
       <span *ngIf="form.form.controls['name']?.touched && ! form.form.controls['name']?.valid" style="font-size: 11px ;color: red;">Name required</span>
     </div>
-  
+<!--   
    <div>
     <label>Age</label>
     <br>
     <input type="number"[(ngModel)]="NewUser.age" required name="age" >
     <br>
-    <!-- <span *ngIf="form.form.controls['age']?.value<1 && ! form.form.controls['age']?.valid" style="font-size: 11px ;color: red;">Age required</span> -->
-   </div>
+    <span *ngIf="form.form.controls['age']?.value<1 && ! form.form.controls['age']?.valid" style="font-size: 11px ;color: red;">Age required</span>
+   </div> -->
   
    
   <div>
@@ -42,6 +42,13 @@
     <span *ngIf="form.form.controls['userName']?.touched && ! form.form.controls['userName']?.valid" style="font-size: 11px ;color: red;">User Name required</span>
   </div>
   
+  <div>
+    <label>Date of Birth</label>
+    <br>
+    <input type="date"[(ngModel)]="NewUser.DateOfBirth" required name="DateOfBirth">
+    <br>
+    <span *ngIf="form.form.controls['DateOfBirth']?.touched && ! form.form.controls['DateOfBirth']?.valid" style="font-size: 11px ;color: red;">User Name required</span>
+  </div>
   
   <button type="submit">Add</button>
   
