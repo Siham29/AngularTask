@@ -3,57 +3,56 @@
     <div>
       <label>Name</label>
       <br>
-      <input type="text" [(ngModel)]="NewUser.name" required name="name">
+      <input type="text" [(ngModel)]="NewUser.firstName" required name="firstName">
       <br>
-      <span *ngIf="form.form.controls['name']?.touched && ! form.form.controls['name']?.valid" style="font-size: 11px ;color: red;">Name required</span>
+      <span *ngIf="form.form.controls['firstName']?.touched && ! form.form.controls['firstName']?.valid" style="font-size: 11px ;color: red;">Name required</span>
     </div>
-<!--   
-   <div>
+
+   <!-- <div>
     <label>Age</label>
     <br>
-    <input type="number"[(ngModel)]="NewUser.age" required name="age" >
+    <input type="number"[(ngModel)]="NewUser.id" required name="id" >
     <br>
-    <span *ngIf="form.form.controls['age']?.value<1 && ! form.form.controls['age']?.valid" style="font-size: 11px ;color: red;">Age required</span>
+    <span *ngIf="form.form.controls['id']?.value<1 && ! form.form.controls['id']?.valid" style="font-size: 11px ;color: red;">Age required</span>
    </div> -->
-  
-   
-  <div>
+
+
+  <!-- <div>
     <label>Password</label>
     <br>
     <input type="password"[(ngModel)]="NewUser.password" required name="password">
     <br>
     <span *ngIf="form.form.controls['password']?.touched && ! form.form.controls['password']?.valid" style="font-size: 11px ;color: red;">Password required</span>
-  </div>
-  
+  </div> -->
+
   <div>
-    <label>Email</label>
+    <label>Last name</label>
     <br>
-    <input type="email"[(ngModel)]="NewUser.email" email required name="email">
+    <input type="text"[(ngModel)]="NewUser.lastName"  required name="lastName">
     <br>
-    <span *ngIf="form.form.controls['email']?.touched && ! form.form.controls['email']?.valid" style="font-size: 11px ;color: red;">Email required</span>
+    <span *ngIf="form.form.controls['lastName']?.touched && ! form.form.controls['lastName']?.valid" style="font-size: 11px ;color: red;">Email required</span>
   </div>
-  
-  
-  <div>
+
+
+  <!-- <div>
     <label>User Name</label>
     <br>
     <input type="text"[(ngModel)]="NewUser.userName" required name="userName">
     <br>
     <span *ngIf="form.form.controls['userName']?.touched && ! form.form.controls['userName']?.valid" style="font-size: 11px ;color: red;">User Name required</span>
-  </div>
-  
-  <div>
+  </div> -->
+
+  <!-- <div>
     <label>Date of Birth</label>
     <br>
     <input type="date"[(ngModel)]="NewUser.DateOfBirth" required name="DateOfBirth">
     <br>
     <span *ngIf="form.form.controls['DateOfBirth']?.touched && ! form.form.controls['DateOfBirth']?.valid" style="font-size: 11px ;color: red;">User Name required</span>
-  </div>
-  
+  </div> -->
+
   <button type="submit">Add</button>
-  
+
   </form>
- 
- 
-  
-  
+
+
+

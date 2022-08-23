@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+
+      html,
+      body{
+           color: black;
+           height: 100vh;
+           display: flex;
+           flex-direction: column;
+           padding: 0%;
+           margin: 0%;
+         
+
+       }
+
+       .flex-header {
+           background-image: linear-gradient(to top right, rgb(205, 247, 249), rgb(230, 245, 183));
+           min-height: 60px;
+           border-bottom: 1px solid black;
+           padding: 20px;
+       }
+
+       .flex-main {
+           display: flex;
+           flex: 1;
+           border-left: 1px solid black;
+           overflow: hidden;
+
+       }
+       .flex-Section{
+           display: flex;
+           flex-direction: column;
+           flex: 1;
+           border-left: 2px solid black;
+
+       }
+
+       .flex-LeftSec {
+           background-image: linear-gradient(to top right, rgb(99, 166, 169), rgb(230, 245, 183));
+           padding: 3rem;
+           padding-top: 50px;
+           text-align: center;
+           border-right: 3px solid black;
+
+       }
+
+       .flex-M {
+           background-color:rgb(231, 245, 222);
+           padding-top: 3rem;
+           flex: 2 2;
+           text-align: center;
+           padding-top: 50px;
+           padding-left: 50px;
+           font-size: 20px;
+           overflow: auto;
+           text-align: left;
+
+       }
+       
+      
