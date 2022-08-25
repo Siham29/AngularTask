@@ -1,0 +1,16 @@
+.textarea-container { 
+    position: relative; 
+    text-align: center;
+  } 
+  .textarea-container textarea { 
+    width: 50%; 
+    height: 50%; 
+    box-sizing: border-box; 
+    text-align: left;
+    
+  } 
+  .textarea-container button { 
+    position: relative; 
+    top: 0; 
+    right: 0; 
+  }

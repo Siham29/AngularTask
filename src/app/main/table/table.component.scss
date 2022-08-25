@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius:2px ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 98%;
+    font-family: 'Arial', Sans-serif;
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 8px;
+  }
+  button {
+    background-color: #788F9D;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 20px 20px;
+    height: 50px;
+    width: 50px;
+  }
+  
+  button[type=submit]:hover {
+    background-color: #4f5c64;
+  }
+ .Flex{
+  display: flex;
+  justify-content: space-between;
+ }

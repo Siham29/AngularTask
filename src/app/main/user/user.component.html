@@ -1,57 +1,66 @@
-<!-- {{UserList | json}} -->
-<form #form="ngForm" (ngSubmit)="addUser(form)" >
-    <div>
-      <label>Name</label>
-      <br>
-      <input type="text" [(ngModel)]="NewUser.firstName" required name="firstName">
-      <br>
-      <span *ngIf="form.form.controls['firstName']?.touched && ! form.form.controls['firstName']?.valid" style="font-size: 11px ;color: red;">Name required</span>
+<h1>Add User</h1>
+
+
+<div class="container">
+  <form #form="ngForm" (ngSubmit)="addUser(form)">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" [(ngModel)]="NewUser.firstName" required name="firstName">
+        <br>
+        <span *ngIf="form.form.controls['firstName']?.touched && ! form.form.controls['firstName']?.valid"
+          style="font-size: 11px ;color: red;">Name required</span>
+      </div>
+
     </div>
 
-   <!-- <div>
-    <label>Age</label>
+    <div class="row">
+      <div class="col-25">
+        <label >Date of birth</label>
+      </div>
+      <div class="col-75">
+        <input type="date" [(ngModel)]="NewUser.DateOfBirth" required name="DateOfBirth">
     <br>
-    <input type="number"[(ngModel)]="NewUser.id" required name="id" >
-    <br>
-    <span *ngIf="form.form.controls['id']?.value<1 && ! form.form.controls['id']?.valid" style="font-size: 11px ;color: red;">Age required</span>
-   </div> -->
+    <span *ngIf="form.form.controls['DateOfBirth']?.touched && ! form.form.controls['DateOfBirth']?.valid"
+      style="font-size: 11px ;color: red;">User Name required</span>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col-25">
+        <label >Email</label>
+      </div>
+      <div class="col-75">
+        <input type="text" [(ngModel)]="NewUser.email" email required name="email">
+        <br>
+        <span *ngIf="form.form.controls['email']?.touched && ! form.form.controls['email']?.valid"
+          style="font-size: 11px ;color: red;">Email required</span>
+      </div>
+    </div>
 
-  <!-- <div>
-    <label>Password</label>
-    <br>
-    <input type="password"[(ngModel)]="NewUser.password" required name="password">
-    <br>
-    <span *ngIf="form.form.controls['password']?.touched && ! form.form.controls['password']?.valid" style="font-size: 11px ;color: red;">Password required</span>
-  </div> -->
-
-  <div>
-    <label>Last name</label>
-    <br>
-    <input type="text"[(ngModel)]="NewUser.lastName"  required name="lastName">
-    <br>
-    <span *ngIf="form.form.controls['lastName']?.touched && ! form.form.controls['lastName']?.valid" style="font-size: 11px ;color: red;">Email required</span>
-  </div>
-
-
-  <!-- <div>
-    <label>User Name</label>
-    <br>
-    <input type="text"[(ngModel)]="NewUser.userName" required name="userName">
-    <br>
-    <span *ngIf="form.form.controls['userName']?.touched && ! form.form.controls['userName']?.valid" style="font-size: 11px ;color: red;">User Name required</span>
-  </div> -->
-
-  <!-- <div>
-    <label>Date of Birth</label>
-    <br>
-    <input type="date"[(ngModel)]="NewUser.DateOfBirth" required name="DateOfBirth">
-    <br>
-    <span *ngIf="form.form.controls['DateOfBirth']?.touched && ! form.form.controls['DateOfBirth']?.valid" style="font-size: 11px ;color: red;">User Name required</span>
-  </div> -->
-
-  <button type="submit">Add</button>
-
+    <div class="row">
+      <div class="col-25">
+        <label >Password</label>
+      </div>
+      <div class="col-75">
+        <input type="password" [(ngModel)]="NewUser.password" required name="password">
+        <br>
+        <span *ngIf="form.form.controls['password']?.touched && ! form.form.controls['password']?.valid"
+          style="font-size: 11px ;color: red;">Password required</span>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-25">
+        <label ></label>
+      </div>
+      <div class="col-75">
+        <button type="submit" >{{id>0? "Update":"Add"}}</button>
+      </div>
+    </div>
+   
   </form>
 
 

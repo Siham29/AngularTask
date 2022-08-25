@@ -1,45 +1,42 @@
- <table border="3"  style="text-align: center;border-collapse: collapse">
-  <thead>
+<div style="overflow-x:auto;">
+<div class="Flex"> 
+  <h1 style="font-family: 'Arial', Sans-serif;" >User</h1>
+<button routerLink="/main">+</button>
+</div>
+ 
+ <table >
+  <thead  style="border: 2px solid #CDCDCD;">
   
-    <tr style="border: 3px solid black;">
-      <th>
-        First Name
+    <tr>
+      <th >
+        #
       </th>
       <th>
-       Last Name
+       Name
       </th>
       <th>
-        Id
+      Age
       </th>
       <th>
-        Delete
+       Dob
       </th>
-      <th>
-        Edit
-      </th>
-      <!-- </th>
-      <th>
-       Age
-      </th>
-      <th>
-        Delete
-      </th> -->
+   
+     
+    
       
     </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let User of UserList" style="border: 3px solid black;">
-  <td>{{User.firstName}}</td>
-  <!-- <td>{{User.DateOfBirth | date}}</td> -->
-  <!-- <td>{{User.email}}</td> -->
-  <td>{{User.lastName}}</td>
-  <!-- <td>{{User.DateOfBirth | calcAge}}</td> -->
-  <!-- <td>{{User.age}}</td> -->
+  <tr *ngFor="let User of this.UserList" style="border: 0.5px solid  #CDCDCD;">
   <td>{{User.id}}</td>
-  <td><button (click)="DeleteUser(User)" style="width: 200px;height: 50px;">Delete</button></td>
-  <td><button (click)="DeleteUser(User)" style="width: 200px;height: 50px;">Edit</button></td>
+ 
+  
+   
+
+
  
   
   </tr>
   </tbody>
   </table>
+</div>

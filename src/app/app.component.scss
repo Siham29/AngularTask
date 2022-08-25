@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+h1{
+    font-size: 25px ;
+    font-weight: 800;
+    font-family: 'Arial', Sans-serif;
+    color: white;
+    padding-left: 23px;
+    padding-top: 0px;
+
+}
+.btn {
+    border-top: 1px solid #cad3da;
+    border-bottom: 1px solid #cad3da;
+    border-left: none;
+    border-right: none;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Arial', Sans-serif;
+  
+    width: 250px;
+    text-align:left;
+  }
+  .default {background-color:#EBEFF2; color: black;} /* Gray */ 
+  
+  .default:hover {background: #ddd;}  
+  /* Solid border */
+hr.solid {
+  border-top: 1px solid #bbb;
+}

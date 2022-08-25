@@ -6,6 +6,9 @@ import { Form, NgForm, FormsModule } from '@angular/forms';
 import { MainRoutingModule } from './main-routing.module';
 import { UserComponent } from './user/user.component';
 import { TableComponent } from './table/table.component';
+import { UserConrollerService } from '../typescript-angular-client-generated';
+
+
 
 
 @NgModule({
@@ -18,6 +21,6 @@ import { TableComponent } from './table/table.component';
     CommonModule,
     MainRoutingModule,
     FormsModule
-  ],  providers: [ CalcAgePipe ]
+  ],  providers: [ CalcAgePipe , UserConrollerService]
 })
 export class MainModule { }

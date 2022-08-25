@@ -1,14 +1,22 @@
 <body>
 <header class="flex-header" >
-  <h1>User App</h1>
+  <h1>APP LOGO</h1>
 
  
 </header>
 
 <div class="flex-main">
   <div class="flex-LeftSec" id="l">
-    <a routerLink="/main/List"><button  > User table</button></a>
-    <a routerLink="/main"><button  > Back</button></a>
+    <br>
+    <button routerLink="/main/List" class="btn default" style="border-top: none; " > Users </button>
+    
+    <br>
+   
+    <button routerLink="/posts" class="btn default" > Posts</button>
+    
+    <br>
+   
+    <button routerLink="/main" class="btn default" > Setting</button>
   </div>
   <div class="flex-M"><router-outlet></router-outlet></div>
 

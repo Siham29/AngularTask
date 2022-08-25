@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 export interface User {
   firstName: string;
-  // age: number;
+  age?: number;
   lastName:string;
+  email?:string;
   id:number;
-  // userName:string;
-  // DateOfBirth?:Date;
+  DateOfBirth?:Date;
+  password?:string;
 
 }
 
