@@ -21,9 +21,9 @@ login(form:NgForm){
   if(form.form.valid){
     this.NewUser.username=form.value.username;
     this.NewUser.password=form.value.password;
-    this.authenticateService.apiAuthenticateLoginPost(this.NewUser).subscribe();
-    this.userConrollerService.apiUserConrollerGet().subscribe(
-      (response) => { this.UserList = response; });
+    this.authenticateService.apiAuthenticateLoginPost(this.NewUser).subscribe((res)=>this.userConrollerService.apiUserConrollerGet(res).subscribe(
+      (response) => { this.UserList = response; }));
+    
     
     
   }
