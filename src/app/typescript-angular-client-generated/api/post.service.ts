@@ -69,10 +69,10 @@ export class PostService {
 
         let headers = this.defaultHeaders;
 
-        // authentication (Bearer) required
-        if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
-            headers = headers.set('Authorization', this.configuration.apiKeys["Authorization"]);
-        }
+              // authentication (Bearer) required
+      //  if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
+        headers = headers.set('Authorization', "Bearer "+ localStorage.getItem('token'));
+        // }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -117,10 +117,10 @@ export class PostService {
 
         let headers = this.defaultHeaders;
 
-        // authentication (Bearer) required
-        if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
-            headers = headers.set('Authorization', this.configuration.apiKeys["Authorization"]);
-        }
+       // authentication (Bearer) required
+      //  if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
+        headers = headers.set('Authorization', "Bearer "+ localStorage.getItem('token'));
+        // }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -222,10 +222,10 @@ export class PostService {
 
         let headers = this.defaultHeaders;
 
-        // authentication (Bearer) required
-        if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
-            headers = headers.set('Authorization', this.configuration.apiKeys["Authorization"]);
-        }
+            // authentication (Bearer) required
+      //  if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
+        headers = headers.set('Authorization', "Bearer "+ localStorage.getItem('token'));
+        // }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -318,10 +318,10 @@ export class PostService {
 
         let headers = this.defaultHeaders;
 
-        // authentication (Bearer) required
-        if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
-            headers = headers.set('Authorization', this.configuration.apiKeys["Authorization"]);
-        }
+            // authentication (Bearer) required
+      //  if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
+        headers = headers.set('Authorization', "Bearer "+ localStorage.getItem('token'));
+        // }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [

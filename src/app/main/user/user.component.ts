@@ -3,7 +3,6 @@ import { ServicesService } from './../../services.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {User} from "../../app.component";
-import { AuthenticateService, LoginModel, UserConrollerService } from 'src/app/typescript-angular-client-generated';
 
 @Component({
   selector: 'app-user',
@@ -16,16 +15,15 @@ export class UserComponent implements OnInit {
   public NewUser:User={firstName:'',lastName:'',id:0,};
   public UserList: User[]=[];
   id: number = 0;
-  public NewUser1:LoginModel={username:'',password:''};
  
 
-  constructor(public servicesService:ServicesService ,public router:Router,public activatedRoute: ActivatedRoute,public authenticateService:AuthenticateService,public userConrollerService:UserConrollerService) { }
+  constructor(public servicesService:ServicesService ,public router:Router,public activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = +this.activatedRoute.snapshot.params['id'];
     console.log('Iam in onInit'+this.id);
     if (this.id > 0) {
-      this.userConrollerService.apiUserConrollerIdGet(this.id).subscribe();
+      this.servicesService.getUserId(this.id).subscribe((_user:User ) =>{this.NewUser=_user});
     }
    
   }
@@ -39,7 +37,7 @@ export class UserComponent implements OnInit {
        { if(this.id>0){
         this.servicesService.PutUser({...this.NewUser}).subscribe(
           (response) => {
-            this.router.navigate(['/main/List']);}
+            this.router.navigate(['/Users/List']);}
         );
        
   
@@ -50,7 +48,7 @@ export class UserComponent implements OnInit {
         this.servicesService
         .PostUser(this.NewUser)
         .subscribe( (response) => {this.UserList.push(this.NewUser);
-          this.router.navigate(['/main/List']);});
+          this.router.navigate(['/Users/List']);});
        
 
        

@@ -1,7 +1,7 @@
 <div style="overflow-x:auto;">
 <div class="Flex"> 
   <h1 style="font-family: 'Arial', Sans-serif;" >User</h1>
-<button routerLink="/main">+</button>
+<button routerLink="/Users">+</button>
 </div>
  
  <table >
@@ -29,9 +29,11 @@
   <tbody>
   <tr *ngFor="let User of this.UserList" style="border: 0.5px solid  #CDCDCD;">
   <td>{{User.id}}</td>
- 
+  <td>{{User.firstName}}</td>
+  <!-- <td>{{User.DateOfBirth | calcAge}}</td>
+  <td>{{User.DateOfBirth | date}}</td>
   
-   
+   <td ><button [routerLink]="[User.id]">Edit </button> &nbsp;&nbsp;<button (click)="DeleteUser(User)" style="background-color:red">X</button></td> -->
 
 
  

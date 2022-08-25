@@ -35,7 +35,7 @@ export class TableComponent implements OnInit {
     let i = this.UserList.indexOf(user);
     if (i >= 0) {
       this.UserList.splice(i, 1);
-      this.servicesService.DeleteUser(user.id).subscribe();
+      this.userConrollerService.apiUserConrollerIdDelete(user.id).subscribe();
     }
 
   }
