@@ -3,6 +3,7 @@ import { ServicesService } from './../../services.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {User} from "../../app.component";
+import { UserConrollerService, UserViewModel } from 'src/app/typescript-angular-client-generated';
 
 @Component({
   selector: 'app-user',
@@ -12,18 +13,18 @@ import {User} from "../../app.component";
 export class UserComponent implements OnInit {
 
 
-  public NewUser:User={firstName:'',lastName:'',id:0,};
-  public UserList: User[]=[];
+  public NewUser:UserViewModel={firstName:'',lastName:'',id:0,};
+  public UserList: UserViewModel[]=[];
   id: number = 0;
  
 
-  constructor(public servicesService:ServicesService ,public router:Router,public activatedRoute: ActivatedRoute) { }
+  constructor(public servicesService:ServicesService ,public router:Router,public activatedRoute: ActivatedRoute,public userConrollerService:UserConrollerService) { }
 
   ngOnInit(): void {
     this.id = +this.activatedRoute.snapshot.params['id'];
     console.log('Iam in onInit'+this.id);
     if (this.id > 0) {
-      this.servicesService.getUserId(this.id).subscribe((_user:User ) =>{this.NewUser=_user});
+      this.userConrollerService.apiUserConrollerIdGet(this.id).subscribe((_user:UserViewModel ) =>{this.NewUser=_user});
     }
    
   }
@@ -35,7 +36,7 @@ export class UserComponent implements OnInit {
         }
         if(form.form.valid)
        { if(this.id>0){
-        this.servicesService.PutUser({...this.NewUser}).subscribe(
+        this.userConrollerService.apiUserConrollerPut({...this.NewUser}).subscribe(
           (response) => {
             this.router.navigate(['/Users/List']);}
         );
@@ -45,8 +46,8 @@ export class UserComponent implements OnInit {
         
        { 
         
-        this.servicesService
-        .PostUser(this.NewUser)
+        this.userConrollerService
+        .apiUserConrollerPost(this.NewUser)
         .subscribe( (response) => {this.UserList.push(this.NewUser);
           this.router.navigate(['/Users/List']);});
        

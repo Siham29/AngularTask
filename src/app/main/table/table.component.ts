@@ -31,7 +31,7 @@ export class TableComponent implements OnInit {
       (response) => { this.UserList = response; });
   }
 
-  DeleteUser(user: User) {
+  DeleteUser(user: UserViewModel) {
     let i = this.UserList.indexOf(user);
     if (i >= 0) {
       this.UserList.splice(i, 1);
@@ -47,7 +47,7 @@ export class TableComponent implements OnInit {
   }
   EditUser(user: User) {
     
-    this.router.navigate(['/main/' + user.id]);
+    this.router.navigate(['/Users/' + user.id]);
 
 
   }

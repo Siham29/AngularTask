@@ -21,7 +21,7 @@
         <label >Date of birth</label>
       </div>
       <div class="col-75">
-        <input type="date" [(ngModel)]="NewUser.DateOfBirth" required name="DateOfBirth">
+        <input type="date" [(ngModel)]="NewUser.dateOfBirth" required name="DateOfBirth">
     <br>
     <span *ngIf="form.form.controls['DateOfBirth']?.touched && ! form.form.controls['DateOfBirth']?.valid"
       style="font-size: 11px ;color: red;">User Name required</span>

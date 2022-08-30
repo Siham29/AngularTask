@@ -27,7 +27,7 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class PostService {
 
-    protected basePath = '/';
+    protected basePath = 'https://localhost:7284';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 
@@ -69,7 +69,7 @@ export class PostService {
 
         let headers = this.defaultHeaders;
 
-              // authentication (Bearer) required
+        // authentication (Bearer) required
       //  if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
         headers = headers.set('Authorization', "Bearer "+ localStorage.getItem('token'));
         // }
@@ -163,9 +163,9 @@ export class PostService {
         let headers = this.defaultHeaders;
 
         // authentication (Bearer) required
-        if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
-            headers = headers.set('Authorization', this.configuration.apiKeys["Authorization"]);
-        }
+      //  if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
+        headers = headers.set('Authorization', "Bearer "+ localStorage.getItem('token'));
+        // }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -222,11 +222,10 @@ export class PostService {
 
         let headers = this.defaultHeaders;
 
-            // authentication (Bearer) required
+        // authentication (Bearer) required
       //  if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
         headers = headers.set('Authorization', "Bearer "+ localStorage.getItem('token'));
         // }
-
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
             'text/plain',
@@ -268,10 +267,10 @@ export class PostService {
 
         let headers = this.defaultHeaders;
 
-        // authentication (Bearer) required
-        if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
-            headers = headers.set('Authorization', this.configuration.apiKeys["Authorization"]);
-        }
+         // authentication (Bearer) required
+      //  if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
+        headers = headers.set('Authorization', "Bearer "+ localStorage.getItem('token'));
+        // }
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
@@ -317,8 +316,8 @@ export class PostService {
 
 
         let headers = this.defaultHeaders;
-
-            // authentication (Bearer) required
+        
+ // authentication (Bearer) required
       //  if (this.configuration.apiKeys && this.configuration.apiKeys["Authorization"]) {
         headers = headers.set('Authorization', "Bearer "+ localStorage.getItem('token'));
         // }

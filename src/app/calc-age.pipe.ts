@@ -16,6 +16,7 @@ export class CalcAgePipe implements PipeTransform {
       {
           age--;
       }
+      console.log(age)
       
       return age;
     }

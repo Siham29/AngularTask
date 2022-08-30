@@ -1,10 +1,42 @@
 <form >
     <div class="textarea-container"> 
-        <textarea rows="8" cols="50">Add your post</textarea> 
+        <textarea rows="8" cols="50"  [(ngModel)]="post.title" name="title"  placeholder="Add your post" style="padding: 10px;margin: 10px;">Add your post</textarea> 
         <br>
-        <div style="text-align: left;"> <button>Menu</button> </div>
+        <button (click)="addPost(post.title)">Share</button> 
        
       </div>
     <br>
     
   </form>
+
+  <table >
+    <thead  style="border: 2px solid #CDCDCD;">
+    
+      <tr *ngFor="let post of this.PostsList" style="border: 0.5px solid  #CDCDCD;">
+        <th >
+          {{post.title}}
+        </th>
+        <th>
+          {{post.creationDate | date}}
+        </th>
+       
+     
+       
+      
+        
+      </tr>
+    </thead>
+    <tbody>
+ <tr *ngFor="let post of this.PostsList" style="border: 0.5px solid  #CDCDCD;">
+ 
+ <!-- <td>{{User.DateOfBirth | calcAge}}</td>
+ <td>{{User.DateOfBirth | date}}</td>
+ 
+  <td ><button [routerLink]="[User.id]">Edit </button> &nbsp;&nbsp;<button (click)="DeleteUser(User)" style="background-color:red">X</button></td> -->
+
+
+
+ 
+ </tr>
+ </tbody>
+ </table>
